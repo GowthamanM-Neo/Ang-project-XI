@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "Ang-project-eleven"
+  "defaultProject": "Ang-project-eleven",
+  "cli": {
+    "analytics": "1a190194-37ff-4464-a54b-67de902e5ea6"
+  }
 }

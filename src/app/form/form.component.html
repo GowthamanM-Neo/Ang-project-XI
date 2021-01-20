@@ -1,0 +1,47 @@
+<div class="forms">
+    <h1 class="title text-center">User Registration</h1>
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">FirstName</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter your name">
+        </div>
+        
+        <div>
+            <label for="exampleInputEmail1">Gender</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="a" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                Male
+                </label>
+             </div>
+             <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="b">
+                <label class="form-check-label" for="exampleRadios2">
+                Female
+                </label>
+             </div>
+        </div>
+        
+        <div class="input-group mb-3" id="countrySelection">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Select a Country</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01" (change)="selectChangeHandler($event)">
+              <option disabled hidden selected value=""></option>
+              <option *ngFor="let names of countryNames" value={{names}}>{{names}}</option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3" id="countrySelection">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Select a State</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+              <option disabled hidden selected value=""></option>
+              <option *ngFor="let city of statesList" value={{city.name}}>{{city.name}}</option>
+            </select>
+          </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
