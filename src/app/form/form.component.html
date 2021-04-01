@@ -26,9 +26,10 @@
             <div class="input-group-prepend">
               <label class="input-group-text" for="inputGroupSelect01">Select a Country</label>
             </div>
-            <select class="custom-select" id="inputGroupSelect01" (change)="selectChangeHandler($event)">
-              <option disabled hidden selected value=""></option>
-              <option *ngFor="let names of countryNames" value={{names}}>{{names}}</option>
+            <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="selectedCountry" name="country" 
+            (change)="selectChangeHandler()">
+              <!-- <option disabled hidden selected value=""></option> -->
+              <option *ngFor="let names of countryNames" [value]='names'>{{names}}</option>
             </select>
           </div>
 

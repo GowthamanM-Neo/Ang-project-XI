@@ -6,20 +6,20 @@ describe('FormComponent', () => {
   let component: FormComponent;
   let fixture: ComponentFixture<FormComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ FormComponent ]
-    })
-    .compileComponents();
-  });
-
+  beforeEach(()=>TestBed.configureTestingModule({
+    providers:[FormComponent]
+  }))
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormComponent);
+    const fixture = TestBed.createComponent(FormComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Form Component Present', () => {
     expect(component).toBeTruthy();
+  });
+  it('Checking the city', () => {
+    component.selectedCountry = "India";
+    var a = component.selectChangeHandler();
+    expect(a[1].name).toBe('Andhra Pradesh');
   });
 });

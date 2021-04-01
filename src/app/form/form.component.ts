@@ -8,16 +8,17 @@ var worldMapData = require('city-state-country');
 })
 export class FormComponent implements OnInit {
   countryNames = country.names().sort();
-  selectedCountry:String="";
-  statesList:any='';
+  selectedCountry:any="";
+  statesList:any;
+  data:any="";
   constructor() { }
   ngOnInit(): void {
   }
-  selectChangeHandler (event: any) {
-    this.selectedCountry = event.target.value;
+  selectChangeHandler(){
     console.log(this.selectedCountry);
     
     this.statesList = worldMapData.getAllStatesFromCountry(this.selectedCountry);
-    
+    console.log(this.statesList[1]);
+    return this.statesList;
   }
 }
